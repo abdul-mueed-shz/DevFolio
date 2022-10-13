@@ -6,7 +6,7 @@
         <q-toolbar-title
           class="text-h4 q-pt-lg text-weight-bold augustina-font"
         >
-          {{ user_name }}
+          {{ `<${APP_CONSTANTS.username}>` }}
         </q-toolbar-title>
         <q-btn
           v-if="$q.screen.width < 1070"
@@ -124,7 +124,7 @@
 
 <script setup>
 import { ref } from "vue";
-
+import { APP_CONSTANTS } from "../common/constants/app";
 import { useQuasar } from "quasar";
 const $q = useQuasar();
 

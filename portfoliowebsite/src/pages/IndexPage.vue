@@ -12,17 +12,19 @@
             "
             class="text-h3 q-mb-md"
           >
-            {{ greeting.title }}
+            {{ APP_CONSTANTS.greetingsOBJ.greetingText() }}
             <q-img
-              style="width: 40px"
-              src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif"
+              :style="APP_CONSTANTS.greetingsOBJ.greetingGIF.gifWidth"
+              :src="APP_CONSTANTS.greetingsOBJ.greetingGIF.gifLink"
             ></q-img>
           </div>
           <div :class="{ 'text-center': $q.screen.lt.sm }" class="text-size">
-            A software developer
-            <q-img style="width: 20px" src="../assets/rocket.png"></q-img> who
-            loves making web apps with Javascript/ VueJs/ Django Rest and some
-            other cool libraries and frameworks | Ex Google DSC core team member
+            {{ APP_CONSTANTS.introductionOBJ.position }}
+            <q-img
+              :style="APP_CONSTANTS.introductionOBJ.introductionGIF.gifWidth"
+              :src="APP_CONSTANTS.introductionOBJ.introductionGIF.gifLink"
+            ></q-img>
+            {{ APP_CONSTANTS.introductionOBJ.introduction }}
           </div>
           <div class="">
             <div class="row q-mt-md text-white">
@@ -73,8 +75,8 @@
         </div>
         <div v-if="$q.screen.width > 650" class="col-4 q-pa-md">
           <q-img
-            src="https://media.giphy.com/media/zhYSVCirREeIZtONCI/giphy.gif"
-            style="max-width: 650px"
+            :src="APP_CONSTANTS.introductionOBJ.introImage.imgLink"
+            :style="APP_CONSTANTS.introductionOBJ.introImage.style"
           ></q-img>
         </div>
       </div>
@@ -84,52 +86,39 @@
       <div class="row q-mt-xl">
         <div :class="responsiveness" class="col-6 q-pa-md">
           <q-img
-            src="https://media.giphy.com/media/juua9i2c2fA0AIp2iq/giphy.gif"
-            style="max-width: 650px"
+            :src="APP_CONSTANTS.profession.sideImage.imgLink"
+            :style="APP_CONSTANTS.profession.sideImage.style"
           ></q-img>
         </div>
         <div
           :class="responsiveness"
           class="col-6 q-py-md column justify-center"
         >
-          <div class="text-h3 q-mb-md">What I do</div>
+          <div class="text-h3 q-mb-md">
+            {{ APP_CONSTANTS.profession.title }}
+          </div>
           <div class="text-size">
-            <div>Make Web apps with awesome technologies</div>
+            <div>{{ APP_CONSTANTS.profession.body }}</div>
             <div class="q-my-sm">
               <q-icon
-                color="orange"
-                size="xl"
-                name="mdi-language-html5"
+                v-for="technology in APP_CONSTANTS.profession.technologies
+                  .iconsList"
+                :key="technology.icon"
+                :color="technology.iconColor"
+                :name="technology.icon"
+                :size="APP_CONSTANTS.profession.technologies.iconsSize"
               ></q-icon>
-              <q-icon
-                color="blue-6"
-                size="xl"
-                name="mdi-language-css3"
-              ></q-icon>
-              <q-icon
-                color="yellow-8"
-                size="xl"
-                name="mdi-language-javascript"
-              ></q-icon>
-              <q-icon color="green" size="xl" name="mdi-vuejs"></q-icon>
-              <q-icon color="red" size="xl" name="mdi-npm"></q-icon>
-              <q-icon color="blue" size="xl" name="mdi-database"></q-icon>
-              <q-icon
-                color="blue-9"
-                size="xl"
-                name="mdi-language-python"
-              ></q-icon>
-              <q-icon color="black" size="xl" name="mdi-github"></q-icon>
-              <q-icon color="red" size="xl" name="mdi-git"></q-icon>
             </div>
             <div class="column">
-              <div>
-                <q-icon color="yellow-9" name="mdi-lightning-bolt"></q-icon>
-                Develop Highly interactive Front end Apps
-              </div>
-              <div>
-                <q-icon color="yellow-9" name="mdi-lightning-bolt"></q-icon>
-                Develop Maintainable Backend Services
+              <div
+                v-for="skill in APP_CONSTANTS.profession.skills.skillList"
+                :key="skill"
+              >
+                <q-icon
+                  :color="APP_CONSTANTS.profession.skills.skillIcon.iconColor"
+                  :name="APP_CONSTANTS.profession.skills.skillIcon.icon"
+                ></q-icon>
+                {{ skill }}
               </div>
             </div>
           </div>
@@ -138,45 +127,22 @@
     </div>
 
     <div>
-      <div class="text-h3 q-my-md">Proficiency</div>
+      <div class="text-h3 q-my-md">{{ APP_CONSTANTS.proficiecy.title }}</div>
       <div class="column text-weight-thin text-size">
-        <div>
-          <div>Frontend/Design</div>
+        <div
+          v-for="skill in APP_CONSTANTS.proficiecy.skills.skillList"
+          :key="skill.title"
+        >
+          <div>{{ skill.title }}</div>
           <q-slider
-            :model-value="7"
-            :min="0"
-            :max="10"
-            color="purple-4"
-            inner-track-color="white"
-            track-size="13px"
-            thumb-size="0px"
-            thumb-color="purple-4"
-          />
-        </div>
-        <div>
-          <div>Programming</div>
-          <q-slider
-            :model-value="6"
-            :min="0"
-            :max="10"
-            color="purple-4"
-            track-size="13px"
-            inner-track-color="white"
-            thumb-size="0px"
-            thumb-color="purple-4"
-          />
-        </div>
-        <div>
-          <div>Backend</div>
-          <q-slider
-            :model-value="4"
-            :min="0"
-            :max="10"
-            color="purple-4"
-            track-size="13px"
-            inner-track-color="white"
-            thumb-size="0px"
-            thumb-color="purple-4"
+            :model-value="skill.sliderValue"
+            :min="APP_CONSTANTS.proficiecy.skills.minSliderVal"
+            :max="APP_CONSTANTS.proficiecy.skills.maxSliderVal"
+            :color="APP_CONSTANTS.proficiecy.skills.sliderColor"
+            :inner-track-color="APP_CONSTANTS.proficiecy.skills.innerTrackColor"
+            :track-size="APP_CONSTANTS.proficiecy.skills.trackSize"
+            :thumb-size="APP_CONSTANTS.proficiecy.skills.thumbSize"
+            :thumb-color="APP_CONSTANTS.proficiecy.skills.thumbColor"
           />
         </div>
       </div>
@@ -555,6 +521,7 @@
 <script setup>
 import { ref } from "vue";
 import { useQuasar } from "quasar";
+import { APP_CONSTANTS } from "../common/constants/app";
 const responsiveness = { "col-12": useQuasar().screen.width < 727 };
 const greeting = ref({
   username: "Abdul Mueed",
