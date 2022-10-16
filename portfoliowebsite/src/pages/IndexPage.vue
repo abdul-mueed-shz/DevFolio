@@ -179,6 +179,7 @@
               <q-avatar
                 class="absolute-center"
                 :style="experience.entityLogo.style"
+                size="70px"
               >
                 <img :src="experience.entityLogo.logo" />
               </q-avatar>
@@ -227,7 +228,10 @@
           v-for="project in APP_CONSTANTS.openSourceProjs.projects"
           :key="project.projTitle"
         >
-          <q-card class="custom-text q-pa-md">
+          <q-card
+            @click="openLink(project.projLink)"
+            class="custom-text q-pa-md full-height card"
+          >
             <div class="row flex items-center">
               <q-icon :name="APP_CONSTANTS.openSourceProjs.titleIcon"></q-icon>
               <div>{{ project.projTitle }}</div>
@@ -349,6 +353,7 @@
 
 <script setup>
 import { APP_CONSTANTS } from "../common/constants/app";
+import { openLink } from "../common/functions/utils";
 import SocialButtons from "../components/SocialButtons.vue";
 import NavigationButtons from "../components/NavigationButtons.vue";
 
@@ -380,5 +385,8 @@ const ContactBreakpoint = computed(() => {
 
 .font-white {
   color: white !important;
+}
+.card {
+  cursor: pointer;
 }
 </style>

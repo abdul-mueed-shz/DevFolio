@@ -89,21 +89,58 @@ export const APP_CONSTANTS = {
     },
     projects: [
       {
-        projTitle: "Conjuctures",
-        projLink: "",
+        projTitle: "Anime Tracker Application",
+        projLink: "https://github.com/Abdul-Mueed-Shahbaz/Anime-Archives",
         projDesc:
-          "A menu driven program which revolves around various Conjuctures!",
-        stars: 4,
-        language: "c++",
-        pullReqs: 5,
+          "A single page application made with quasar that shows you recent releases, top rated, upcoming and recently released anime along with the search capabilities. The search even shows the score, type, airing status, and release year.",
+        stars: 1,
+        language: "JS",
+        pullReqs: 0,
       },
       {
-        projTitle: "Notes Application",
-        projLink: "",
-        projDesc: "A notes application made in flutter!",
-        stars: 4,
+        projTitle: "Dino-Run",
+        projLink: "https://github.com/Abdul-Mueed-Shahbaz/Dino-Run",
+        projDesc:
+          "A runner game made in unity. Personally, worked on all the mechanics implemented in the game as well as some level and UI tweaks",
+        stars: 1,
+        language: "c#",
+        pullReqs: 0,
+      },
+      {
+        projTitle: "Todo-App",
+        projLink: "https://github.com/Abdul-Mueed-Shahbaz/Todo-App",
+        projDesc:
+          "A Flutter project to create a Todo app. SQFlite database engine is used to store persistent data.",
+        stars: 1,
         language: "Dart",
-        pullReqs: 5,
+        pullReqs: 0,
+      },
+      {
+        projTitle: "Personal Expenses Application",
+        projLink:
+          "https://github.com/Abdul-Mueed-Shahbaz/Personal-Expenses-App",
+        projDesc:
+          "A flutter project for the front end of a personal expenses app.",
+        stars: 1,
+        language: "Dart",
+        pullReqs: 0,
+      },
+      {
+        projTitle: "BMI Calculator",
+        projLink: "https://github.com/Abdul-Mueed-Shahbaz/bmi-calculator",
+        projDesc: "Bmi Calculator app made using flutter.",
+        stars: 1,
+        language: "Dart",
+        pullReqs: 0,
+      },
+      {
+        projTitle: "ChatApp",
+        projLink: "https://github.com/Abdul-Mueed-Shahbaz/ChatApp",
+        projDesc:
+          "A Chat Application made using Python socket and Tkinter library",
+        stars: 6,
+        language: "Python",
+        pullReqs: 2,
       },
     ],
   },
@@ -136,8 +173,8 @@ export const APP_CONSTANTS = {
         entityName: "Redmath",
         expCardBg: "bg-red-8",
         entityLogo: {
-          logo: "https://cdn.quasar.dev/img/boy-avatar.png",
-          style: "top: 110px",
+          logo: require("assets/ExperiencesImages/redmath.png"),
+          style: "top: 114px",
         },
         position: "Full stack web developer",
         duration: "August 2022-Present",
@@ -153,7 +190,7 @@ export const APP_CONSTANTS = {
         expCardBg: "bg-orange-9",
 
         entityLogo: {
-          logo: "https://cdn.quasar.dev/img/boy-avatar.png",
+          logo: require("assets/ExperiencesImages/mindstorm.jpg"),
           style: "top: 150px",
         },
         position: "Unity Game Developer",
@@ -167,16 +204,16 @@ export const APP_CONSTANTS = {
       },
       {
         entityName: "Intelligent Machine Labs",
-        expCardBg: "bg-black",
+        expCardBg: "bg-blue-5",
 
         entityLogo: {
-          logo: "https://cdn.quasar.dev/img/boy-avatar.png",
+          logo: require("assets/ExperiencesImages/imli.webp"),
           style: "top: 150px",
         },
         position: "ML Intern",
         duration: "July 2019 – Aug 2019",
         description:
-          "Intelligent Machines Lab, is an endeavor to establish close working relationship among researchers, engineers and developers",
+          "Intelligent Machines Lab ITU, is an endeavor to establish close working relationship among researchers, engineers and developers",
         responsibilities: [
           "Responsible for generating training dataset of landscape features, from high resolution satellite imagery data using Labelbox",
           "The dataset was used for prediction of vector borne disease’s prevalence and quantification of agricultural land",
@@ -185,10 +222,10 @@ export const APP_CONSTANTS = {
       },
       {
         entityName: "Fiver",
-        expCardBg: "bg-green-7",
+        expCardBg: "bg-green-9",
 
         entityLogo: {
-          logo: "https://cdn.quasar.dev/img/boy-avatar.png",
+          logo: require("assets/ExperiencesImages/Fiver.png"),
           style: "top: 110px",
         },
         position: "Freelance Game Designer",
