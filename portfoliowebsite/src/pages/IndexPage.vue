@@ -56,10 +56,10 @@
     <div id="greetings">
       <div class="row">
         <div
-          :class="{ 'items-center col-12': breakpoint }"
+          :class="{ 'items-center col-12': APP_BREAKPOINTS.breakpoint }"
           class="col-7 column justify-center q-py-md q-mt-xl"
         >
-          <div v-if="$q.screen.width > 775" class="text-h3 q-mb-md">
+          <div v-if="APP_BREAKPOINTS.breakpointr" class="text-h3 q-mb-md">
             {{ APP_CONSTANTS.greetingsOBJ.greetingText() }}
             <q-img
               :style="APP_CONSTANTS.greetingsOBJ.greetingGIF.gifWidth"
@@ -68,7 +68,7 @@
           </div>
           <div
             :class="{
-              'text-center': breakpoint,
+              'text-center': APP_BREAKPOINTS.breakpoint,
             }"
             class="custom-text"
           >
@@ -84,7 +84,7 @@
           </div>
         </div>
         <div
-          :class="{ 'order-first col-12': breakpoint }"
+          :class="{ 'order-first col-12': APP_BREAKPOINTS.breakpoint }"
           class="col-4 q-pa-md q-py-xl"
         >
           <q-img
@@ -97,14 +97,17 @@
 
     <div id="profession">
       <div class="row q-mt-xl">
-        <div :class="{ 'col-12': breakpoint }" class="col-6 q-pa-md">
+        <div
+          :class="{ 'col-12': APP_BREAKPOINTS.breakpoint }"
+          class="col-6 q-pa-md"
+        >
           <q-img
             :src="APP_CONSTANTS.profession.sideImage.imgLink"
             :style="APP_CONSTANTS.profession.sideImage.style"
           ></q-img>
         </div>
         <div
-          :class="{ 'text-center col-12': breakpoint }"
+          :class="{ 'text-center col-12': APP_BREAKPOINTS.breakpoint }"
           class="col-6 q-py-md column justify-center"
         >
           <div class="text-h3 q-mb-md">
@@ -139,7 +142,10 @@
       </div>
     </div>
 
-    <div :class="{ 'text-center': breakpoint }" id="proficiency">
+    <div
+      :class="{ 'text-center': APP_BREAKPOINTS.breakpoint }"
+      id="proficiency"
+    >
       <div class="text-h3 q-my-md">{{ APP_CONSTANTS.proficiecy.title }}</div>
       <div class="column text-weight-thin custom-text">
         <div
@@ -162,7 +168,10 @@
       </div>
     </div>
 
-    <div :class="{ 'text-center': breakpoint }" id="experiences">
+    <div
+      :class="{ 'text-center': APP_BREAKPOINTS.breakpoint }"
+      id="experiences"
+    >
       <div class="text-h3 q-my-md">{{ APP_CONSTANTS.experiences.title }}</div>
       <div class="row">
         <div
@@ -218,7 +227,7 @@
       </div>
     </div>
 
-    <div :class="{ 'text-center': breakpoint }" id="projects">
+    <div :class="{ 'text-center': APP_BREAKPOINTS.breakpoint }" id="projects">
       <div class="text-h3 q-my-md">
         {{ APP_CONSTANTS.openSourceProjs.title }}
       </div>
@@ -277,7 +286,10 @@
       </div>
     </div>
 
-    <div :class="{ 'text-center': breakpoint }" id="achievements">
+    <div
+      :class="{ 'text-center': APP_BREAKPOINTS.breakpoint }"
+      id="achievements"
+    >
       <div class="text-h3 q-my-md">
         {{ APP_CONSTANTS.achievements.title }}
         <q-icon color="yellow-8" size="lg" name="mdi-trophy"></q-icon>
@@ -320,7 +332,7 @@
 
     <div id="contact">
       <div
-        :class="{ 'flex flex-center': ContactBreakpoint }"
+        :class="{ 'flex flex-center': APP_BREAKPOINTS.ContactBreakpoint }"
         class="text-h3 q-my-md"
       >
         Reach Out to me!
@@ -328,7 +340,9 @@
       <div class="row custom-text">
         <div
           class="flex items-center"
-          :class="{ 'col-12 flex flex-center': ContactBreakpoint }"
+          :class="{
+            'col-12 flex flex-center': APP_BREAKPOINTS.ContactBreakpoint,
+          }"
         >
           <q-avatar size="150px" color="purple">
             <q-img :src="APP_CONSTANTS.profilePicture"></q-img>
@@ -336,7 +350,8 @@
         </div>
         <div
           :class="{
-            'col-12 text-center flex flex-center': ContactBreakpoint,
+            'col-12 text-center flex flex-center':
+              APP_BREAKPOINTS.ContactBreakpoint,
           }"
           class="column q-ma-lg"
         >
@@ -354,28 +369,17 @@
 <script setup>
 import { APP_CONSTANTS } from "../common/constants/app";
 import { openLink } from "../common/functions/utils";
+import appBreakpoints from "../common/composables/breakpoints";
 import SocialButtons from "../components/SocialButtons.vue";
 import NavigationButtons from "../components/NavigationButtons.vue";
-
+import { ref } from "vue";
 import { useQuasar } from "quasar";
-import { computed, ref } from "vue";
 
 //Variables
 const $q = useQuasar();
-
 let isDarkMode = ref(localStorage.getItem("isDarkMode") === "true");
 $q.dark.set(localStorage.getItem("isDarkMode") === "true");
-
-//Computed properties
-const breakpoint = computed(() => {
-  return $q.screen.width < 775;
-});
-
-const ContactBreakpoint = computed(() => {
-  return $q.screen.width < 1316;
-});
-
-//Functions
+const APP_BREAKPOINTS = appBreakpoints($q);
 </script>
 
 <style lang="scss">
