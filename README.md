@@ -90,3 +90,6 @@ See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-webpack/quas
 <img src="https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D" />
 </div>
 
+#
+
+Inspiration taken from [ saadpasta/developerFolio ](https://github.com/saadpasta/developerFolio).
