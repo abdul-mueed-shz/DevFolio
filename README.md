@@ -5,7 +5,7 @@
 <h1><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/>Developer Portfolio Application (Devfolio)</h1>
 
 
-<h4>A single page portfolio application made with quasar containing sections verbosely explaining the developers's skills, interests and experiences \</h4>
+<h4>A single page portfolio application made with quasar containing sections verbosely explaining the developers's skills, interests and experiences </h4>
 
 #
 <h2><img  width="30px" src="https://www.animatedimages.org/data/media/491/animated-television-image-0115.gif" border="0" alt="animated-television-image-0115" />
