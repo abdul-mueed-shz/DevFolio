@@ -8,6 +8,10 @@
 // Configuration for your app
 // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js
 
+var quasarConfs = require("./src/common/constants/quasarConfs.js");
+
+var quasarConfig = quasarConfs();
+
 const ESLintPlugin = require("eslint-webpack-plugin");
 
 const { configure } = require("quasar/wrappers");
@@ -144,9 +148,9 @@ module.exports = configure(function (ctx) {
       },
 
       manifest: {
-        name: `Quasar App`,
-        short_name: `Quasar App`,
-        description: `A Quasar Project`,
+        name: quasarConfig.appName,
+        short_name: quasarConfig.appName,
+        description: quasarConfig.description,
         display: "standalone",
         orientation: "portrait",
         background_color: "#ffffff",

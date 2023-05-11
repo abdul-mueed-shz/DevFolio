@@ -5,5 +5,8 @@ export function scroll(id) {
 }
 
 export function openLink(url) {
+  if (!url) {
+    return;
+  }
   window.open(url, "_blank");
 }

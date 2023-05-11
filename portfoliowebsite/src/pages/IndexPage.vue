@@ -185,13 +185,11 @@
               class="text-center text-white"
             >
               <div class="q-ma-lg text-h4">{{ experience.entityName }}</div>
-              <q-avatar
-                class="absolute-center"
-                :style="experience.entityLogo.style"
-                size="70px"
-              >
-                <img :src="experience.entityLogo.logo" />
-              </q-avatar>
+              <div class="relative-position q-pt-lg">
+                <q-avatar class="absolute-center q-pt-sm" size="4.8rem">
+                  <img :src="experience.entityLogo.logo" />
+                </q-avatar>
+              </div>
             </q-card-section>
             <q-card-section class="column text-center">
               <div class="text-weight-medium q-my-xs custom-text">
@@ -226,55 +224,26 @@
         </div>
       </div>
     </div>
-
+    <!-- TITLE: CONFIDENTIAL PROJECTS -->
     <div :class="{ 'text-center': APP_BREAKPOINTS.breakpoint }" id="projects">
-      <div class="text-h3 q-my-md">
-        {{ APP_CONSTANTS.openSourceProjs.title }}
-      </div>
-      <div class="row">
-        <div
-          class="col-12 col-md-6 q-pa-sm q-py-md"
-          v-for="project in APP_CONSTANTS.openSourceProjs.projects"
-          :key="project.projTitle"
-        >
-          <q-card
-            @click="openLink(project.projLink)"
-            class="custom-text q-pa-md full-height card"
-          >
-            <div class="row flex items-center">
-              <q-icon :name="APP_CONSTANTS.openSourceProjs.titleIcon"></q-icon>
-              <div>{{ project.projTitle }}</div>
-            </div>
-            <div style="font-size: large" class="row flex items-center">
-              <div>
-                {{ project.projDesc }}
-              </div>
-            </div>
-            <div class="row flex items-center">
-              <q-icon
-                class="q-mr-xs"
-                :name="APP_CONSTANTS.openSourceProjs.languageConf.icon"
-                :size="APP_CONSTANTS.openSourceProjs.languageConf.iconsSize"
-                :color="APP_CONSTANTS.openSourceProjs.languageConf.iconColor"
-              ></q-icon>
-              <div>{{ project.language }}</div>
-              <q-icon
-                class="q-ml-md"
-                :name="APP_CONSTANTS.openSourceProjs.starsConf.icon"
-                :size="APP_CONSTANTS.openSourceProjs.starsConf.iconSize"
-                :color="APP_CONSTANTS.openSourceProjs.starsConf.iconColor"
-              ></q-icon>
-              <div>{{ project.stars }}</div>
-              <q-icon
-                class="q-ml-lg"
-                :name="APP_CONSTANTS.openSourceProjs.pullReqsConf.icon"
-                :size="APP_CONSTANTS.openSourceProjs.pullReqsConf.iconSize"
-              ></q-icon>
-              <div>{{ project.pullReqs }}</div>
-            </div>
-          </q-card>
-        </div>
-      </div>
+      <ProjectsList
+        :project-title="APP_CONSTANTS.proprietaryProjects.title"
+        :project-title-icon="APP_CONSTANTS.proprietaryProjects.titleIcon"
+        :projects-list="APP_CONSTANTS.proprietaryProjects.projects"
+        :language-conf="APP_CONSTANTS.openSourceProjs.languageConf"
+      />
+    </div>
+
+    <!-- TITLE: OPEN SOURCE PROJECTS -->
+    <div :class="{ 'text-center': APP_BREAKPOINTS.breakpoint }" id="projects">
+      <ProjectsList
+        :project-title="APP_CONSTANTS.openSourceProjs.title"
+        :project-title-icon="APP_CONSTANTS.openSourceProjs.titleIcon"
+        :projects-list="APP_CONSTANTS.openSourceProjs.projects"
+        :language-conf="APP_CONSTANTS.openSourceProjs.languageConf"
+        :stars-conf="APP_CONSTANTS.openSourceProjs.starsConf"
+        :pull-reqs-conf="APP_CONSTANTS.openSourceProjs.pullReqsConf"
+      />
       <div class="row flex flex-center">
         <q-btn
           :href="APP_CONSTANTS.socialMediaLinks.github"
@@ -344,7 +313,7 @@
             'col-12 flex flex-center': APP_BREAKPOINTS.ContactBreakpoint,
           }"
         >
-          <q-avatar size="150px" color="purple">
+          <q-avatar size="15rem" color="purple">
             <q-img :src="APP_CONSTANTS.profilePicture"></q-img>
           </q-avatar>
         </div>
@@ -353,10 +322,13 @@
             'col-12 text-center flex flex-center':
               APP_BREAKPOINTS.ContactBreakpoint,
           }"
-          class="column q-ma-lg"
+          class="column"
         >
           <div class="q-mb-xs">
-            DISCUSS A PROJECT OR JUST WANT TO SAY HI? MY INBOX IS OPEN FOR ALL.
+            <div class="q-pt-sm">
+              DISCUSS A PROJECT OR JUST WANT TO SAY HI? MY INBOX IS OPEN FOR
+              ALL.
+            </div>
             <div class="q-mt-sm">OPEN FOR OPPORTUNITIES: YES</div>
           </div>
           <social-buttons></social-buttons>
@@ -367,13 +339,16 @@
 </template>
 
 <script setup>
+import SocialButtons from "../components/SocialButtons.vue";
+import NavigationButtons from "../components/NavigationButtons.vue";
+import ProjectsList from "../components/ProjectsList.vue";
+
+import { ref } from "vue";
+import { useQuasar } from "quasar";
+
 import { APP_CONSTANTS } from "../common/constants/app";
 import { openLink } from "../common/functions/utils";
 import appBreakpoints from "../common/composables/breakpoints";
-import SocialButtons from "../components/SocialButtons.vue";
-import NavigationButtons from "../components/NavigationButtons.vue";
-import { ref } from "vue";
-import { useQuasar } from "quasar";
 
 //Variables
 const $q = useQuasar();

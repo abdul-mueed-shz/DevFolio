@@ -13,7 +13,7 @@ export const APP_CONSTANTS = {
   introductionOBJ: {
     position: "A Software Engineer",
     introduction:
-      "who loves making web apps with Javascript/ VueJs/ Django Rest and some other cool libraries and frameworks | Ex Google DSC core team member",
+      "who loves making web apps with Javascript/ VueJs/ Django Rest Framework and some other cool libraries and frameworks | Ex Google DSC core team member | Mindstorm Gamejam 2021 graduate | Upwork/Fiverr Freelance developer",
     introductionGIF: {
       gifLink: require("../../assets/rocket.png"),
       gifWidth: "width:20px",
@@ -49,6 +49,11 @@ export const APP_CONSTANTS = {
       skillList: [
         "Develop Highly interactive Front end Apps",
         "Develop Maintainable Backend Services",
+        "Develop Independent or Embedded browser extensions",
+        "Integrate third party libraries efficiently in web apps",
+        "Design and implement RESTful APIs methodically",
+        "Develop scalable and secure web solutions",
+        "Efficiently collaborate, deliver, and adapt with clients.",
       ],
     },
   },
@@ -63,9 +68,9 @@ export const APP_CONSTANTS = {
       trackSize: "13px",
       thumbSize: "0px",
       skillList: [
-        { title: "Frontend/Design", sliderValue: 7 },
-        { title: "Programming", sliderValue: 6 },
-        { title: "Backend", sliderValue: 4 },
+        { title: "Frontend/Design", sliderValue: 8 },
+        { title: "Programming", sliderValue: 7 },
+        { title: "Backend", sliderValue: 6 },
       ],
     },
   },
@@ -88,6 +93,34 @@ export const APP_CONSTANTS = {
       iconSize: "md",
     },
     projects: [
+      {
+        projTitle: "Authentication Application",
+        projLink: "https://github.com/Abdul-Mueed-Shahbaz/Auth-Application",
+        projDesc:
+          "A Full stack authentication application made using quasar 2 for frontend and django rest framework for backend. The application is made completely flexible to be coupled with any other application and implements jwt token authentication.",
+        stars: 2,
+        language: "JS & Python",
+        pullReqs: 0,
+      },
+      {
+        projTitle: "Starks Ecommerce Application",
+        projLink:
+          "https://github.com/Abdul-Mueed-Shahbaz/Eccomerce-Application",
+        projDesc:
+          "A Full stack ecommerce application made using quasar 2 for frontend and django rest framework for backend. The application is coupled with my auth application described in the auth application card for login and jwt token authentication.",
+        stars: 2,
+        language: "JS & Python",
+        pullReqs: 0,
+      },
+      {
+        projTitle: "Developer Portfolio Application (Devfolio)",
+        projLink: "https://github.com/Abdul-Mueed-Shahbaz/DevFolio",
+        projDesc:
+          "A single page portfolio application made with quasar containing sections verbosely explaining the developers's skills, interests and experiences.",
+        stars: 2,
+        language: "JS",
+        pullReqs: 0,
+      },
       {
         projTitle: "Anime Tracker Application",
         projLink: "https://github.com/Abdul-Mueed-Shahbaz/Anime-Archives",
@@ -143,6 +176,76 @@ export const APP_CONSTANTS = {
         pullReqs: 2,
       },
     ],
+    confidentialProjects: [
+      {
+        projTitle: "Authentication Application",
+        projLink: "https://github.com/Abdul-Mueed-Shahbaz/Auth-Application",
+        projDesc:
+          "A Full stack authentication application made using quasar 2 for frontend and django rest framework for backend. The application is made completely flexible to be coupled with any other application and implements jwt token authentication.",
+        stars: 2,
+        language: "JS & Python",
+        pullReqs: 0,
+      },
+    ],
+  },
+  proprietaryProjects: {
+    title: "Proprietary Projects I have worked on",
+    titleIcon: "mdi-account-lock",
+    languageConf: {
+      icon: "mdi-circle",
+      iconColor: "purple",
+      iconSize: "sm",
+    },
+    projects: [
+      {
+        projTitle: "Fut Trading Bot",
+        projDesc:
+          "Fut Trading Bot, a game-changing tool I've worked on, is the ultimate companion for FIFA Ultimate Team (FUT) enthusiasts. Designed to enhance your trading experience, this powerful bot automates sniping and selling processes. With lightning-fast search capabilities that outperform human abilities, it scans the FUT Web App swiftly, identifying lucrative trading opportunities that may otherwise go unnoticed. By utilizing the Fut Trading Bot, you can maximize your coin earnings and eliminate the need to invest real money in FIFA coins. Seamlessly integrated and easy to use, our Fut Trading Bot empowers you to take control of your trading endeavors in FUT, unlocking new levels of success and financial freedom.",
+        language: "JS",
+        responsibilities: [
+          "Embed the Fut Trading Bot seamlessly within the underlying Fifa 23 Fut Web App.",
+          "Implement state management using Pinia for efficient data handling.",
+          "Establish communication between the Fut Trading Bot and the Fut Web App by utilizing quasar bridge calls (message passing).",
+          "Develop, thoroughly test, and ensure functional implementation of the Fut Trading Bot.",
+        ],
+      },
+      {
+        projTitle: "rCBT",
+        projDesc:
+          "rCBT is a computer-based secure online test management system for creating, administering, conducting, and grading computer-based exams. It allows institutions to conduct exams remotely, at designated locations with authentication measures. The platform has eased the transparency of online assessments for students and institutions. It also offers various proctoring controls, including one-to-one, one-to-many, and AI-based options, to ensure transparency and convenience for the examination management system. Institutions can conduct examinations for examinees using this platform from any remote location",
+        language: "JS & Python",
+        responsibilities: [
+          "Developed and implemented the functionality for generating complete exams/papers in rCBT, enabling seamless exam creation and administration.",
+          "Integrated proctoring functionalities using the OpenVidu library, ensuring secure and transparent exam sessions with various proctoring controls such as one-to-one, one-to-many, and AI-based options.",
+          "Took charge of the complete process handling of paper cancellation and warning sending to examinees, ensuring smooth management of exam-related communications and actions.",
+          "Led the development of numerous other features within the rCBT platform, enhancing the overall user experience and functionality.",
+        ],
+      },
+      {
+        projTitle: "rLoginApp",
+        projDesc:
+          "rLoginApp is a versatile full-stack authentication application, developed with Quasar 2 for the frontend and Django Rest Framework for the backend. This application is meticulously designed to be seamlessly integrated with any other application. It leverages JWT token authentication for secure user authentication and authorization. With Quasar 2 as the frontend framework, the application delivers a robust and responsive user interface, while Django Rest Framework empowers the backend with efficient and scalable API development. Together, they provide a powerful foundation for building flexible and secure authentication systems.",
+        language: "JS & Python",
+        responsibilities: [
+          "Expertly resolved bugs and issues within the rLoginApp, ensuring its stability and reliability for seamless user authentication and authorization.",
+          "Successfully derived inspiration from the rLoginApp to develop a new application, incorporating additional features and leveraging the integration/connection capabilities with other RedMarker's apps, such as the rCBT platform.",
+          "Gained valuable insights and hands-on experience in integrating and connecting the rLoginApp with other RedMarker's applications, establishing a deeper understanding of seamless app integration within the ecosystem.",
+          "Demonstrated adaptability and proficiency by working with Quasar 2 for frontend development and Django Rest Framework for backend development in the creation and enhancement of the rLoginApp, showcasing the ability to deliver versatile full-stack authentication solutions.",
+        ],
+      },
+      {
+        projTitle: "Gaia",
+        projDesc:
+          "Gaia, a monumental achievement in game development, is the result of my dedicated efforts as part of a team. Created using Unity, this third-person thriller shooter game surpasses the expansive scale of even GTA V. Gaia presents players with a sprawling open world, meticulously crafted to immerse them in a breathtaking environment teeming with intricate details. From towering cityscapes to vast wilderness, Gaia offers an unparalleled sense of exploration and adventure. Gaia is a testament to the boundless possibilities of game development, offering an unforgettable experience for players seeking an epic and immersive gaming experience.",
+        language: "C#",
+        responsibilities: [
+          "Single-handedly spearheaded the development of Gaia, an awe-inspiring third-person thriller shooter game, using Unity's Gaia asset and a carefully curated selection of assets provided by the client.",
+          "Leveraged Unity's Gaia asset along with other resources to create a breathtaking and immersive open-world environment, meticulously designed to captivate players with its intricate details and expansive scale, rivaling renowned games like GTA V.",
+          "As the sole developer of the Gaia project, skillfully harnessed Unity's capabilities to craft a vast and diverse terrain, encompassing towering cityscapes and sprawling wilderness, delivering an unparalleled sense of exploration and adventure.",
+          "Gaia stands as an extraordinary testament to the limitless potential of game development, showcasing an unforgettable gaming experience meticulously created by utilizing Unity's Gaia asset and client-provided assets, bringing forth an exhilarating and immersive gameplay encounter.",
+        ],
+      },
+    ],
   },
   achievements: {
     title: "Achievements & Certifications",
@@ -174,7 +277,6 @@ export const APP_CONSTANTS = {
         expCardBg: "bg-red-8",
         entityLogo: {
           logo: require("assets/ExperiencesImages/redmath.png"),
-          style: "top: 114px",
         },
         position: "Full stack web developer",
         duration: "August 2022-Present",
@@ -191,7 +293,6 @@ export const APP_CONSTANTS = {
 
         entityLogo: {
           logo: require("assets/ExperiencesImages/mindstorm.jpg"),
-          style: "top: 150px",
         },
         position: "Unity Game Developer",
         duration: "July 2021-September 2021",
@@ -208,7 +309,6 @@ export const APP_CONSTANTS = {
 
         entityLogo: {
           logo: require("assets/ExperiencesImages/imli.webp"),
-          style: "top: 150px",
         },
         position: "ML Intern",
         duration: "July 2019 – Aug 2019",
@@ -226,7 +326,6 @@ export const APP_CONSTANTS = {
 
         entityLogo: {
           logo: require("assets/ExperiencesImages/Fiver.png"),
-          style: "top: 110px",
         },
         position: "Freelance Game Designer",
         duration: "Jan 2022-April 2022",
