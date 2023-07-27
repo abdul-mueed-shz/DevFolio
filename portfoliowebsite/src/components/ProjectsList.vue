@@ -4,13 +4,14 @@
   </div>
   <div class="row">
     <div
-      class="col-12 col-md-6 q-pa-sm q-py-md"
+      class="col-12 col-md-6 q-px-sm q-py-md"
       v-for="project in projectsList"
       :key="project.projTitle"
     >
       <q-card
         @click="() => (project?.projLink ? openLink(project.projLink) : null)"
-        class="custom-text full-height card"
+        bordered
+        class="custom-text full-height card q-pa-md border-radius__16px"
       >
         <div
           class="row q-px-md flex items-center"
@@ -38,8 +39,8 @@
             style="font-size: smaller"
           >
             <q-item
-              class="q-mr-md q-ml-sm q-my-xs"
-              style="border: 1px dotted gray; border-radius: 8px"
+              class="q-mr-md q-my-xs"
+              style="border-bottom: 1px dotted gray; border-radius: 8px"
               v-ripple
             >
               <q-item-section side>

@@ -1,5 +1,5 @@
 <template>
-  <div class="row q-mt-md q-ml-lg text-white">
+  <div class="row q-mt-md text-white">
     <q-btn
       :href="APP_CONSTANTS.socialMediaLinks.github"
       target="_blank"
@@ -41,21 +41,18 @@
       icon="mdi-twitter"
     ></q-btn>
   </div>
-  <div
-    v-if="props.showContacts"
-    class="row q-ml-lg q-gutter-y-xs q-mt-lg text-white"
-  >
+  <div v-if="props.showContacts" class="row q-gutter-y-xs q-mt-lg text-white">
     <q-btn
       @click="scroll('contact')"
       :size="$q.screen.lt.sm ? '1rem' : 'lg'"
-      class="bg-purple-9 q-mr-sm"
+      class="bg-purple-9 q-mr-sm border-radius__8px"
       label="Contact me"
     ></q-btn>
     <q-btn
       :size="$q.screen.lt.sm ? '1rem' : 'lg'"
-      class="bg-purple-9 q-mr-sm"
       href="https://drive.google.com/file/d/1BjszPP1kew7hgWuInH-rv67okoqjCi1q/view?usp=sharing"
       target="_blank"
+      class="bg-purple-9 q-mr-sm border-radius__8px"
       label="See My Resume"
     ></q-btn>
   </div>

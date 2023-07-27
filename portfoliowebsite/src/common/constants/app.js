@@ -32,7 +32,7 @@ export const APP_CONSTANTS = {
     },
     introImage: {
       imgLink: "https://media.giphy.com/media/zhYSVCirREeIZtONCI/giphy.gif",
-      style: "max-width:650px",
+      style: "max-width:596.05px;max-height:596.05px",
     },
   },
   profession: {
@@ -80,9 +80,9 @@ export const APP_CONSTANTS = {
       trackSize: "13px",
       thumbSize: "0px",
       skillList: [
-        { title: "Frontend/Design", sliderValue: 8 },
-        { title: "Programming", sliderValue: 7 },
-        { title: "Backend", sliderValue: 6 },
+        { title: "Frontend/Design", sliderValue: 10 },
+        { title: "Programming", sliderValue: 9 },
+        { title: "Backend", sliderValue: 9 },
       ],
     },
   },
