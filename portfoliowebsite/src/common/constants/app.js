@@ -11,6 +11,18 @@ export const APP_CONSTANTS = {
     },
   },
   introductionOBJ: {
+    address: {
+      title: "My Address",
+      value: "Lahore, Pakistan",
+    },
+    mail: {
+      title: "Email Me",
+      value: "abdulmueedshahbaz@gmail.com",
+    },
+    phone: {
+      title: "Call Me",
+      value: "+923234942960",
+    },
     position: "A Software Engineer",
     introduction:
       "who loves making web apps with Javascript/ VueJs/ Django Rest Framework and some other cool libraries and frameworks | Ex Google DSC core team member | Mindstorm Gamejam 2021 graduate | Upwork/Fiverr Freelance developer",

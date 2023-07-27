@@ -79,7 +79,7 @@
             ></q-img>
             {{ APP_CONSTANTS.introductionOBJ.introduction }}
           </div>
-          <div class="q-ml-lg">
+          <div class="full-width">
             <social-buttons :show-contacts="true"></social-buttons>
           </div>
         </div>
@@ -334,6 +334,108 @@
           <social-buttons></social-buttons>
         </div>
       </div>
+
+      <!-- TITLE:GENERAL INFO -->
+      <div v-if="false" class="row q-pt-md">
+        <div class="col-12 col-md-4">
+          <q-card bordered>
+            <q-card-section class="row">
+              <div class="col-1 flex flex-center">
+                <q-icon
+                  color="secondary"
+                  name="mdi-map-marker"
+                  size="xl"
+                ></q-icon>
+              </div>
+              <div class="column q-pl-sm">
+                <div class="text-h6 text-weight-bold">
+                  {{ APP_CONSTANTS.introductionOBJ.address.title }}
+                </div>
+                <div>{{ APP_CONSTANTS.introductionOBJ.address.value }}</div>
+              </div>
+            </q-card-section>
+          </q-card>
+        </div>
+        <div :class="{ 'q-px-sm': $q.screen.gt.sm }" class="col-12 col-md-4">
+          <q-card bordered>
+            <q-card-section class="row">
+              <div class="col-1 flex flex-center">
+                <q-icon color="secondary" name="mdi-mail" size="xl"></q-icon>
+              </div>
+              <div class="column q-pl-md">
+                <div class="text-h6 text-weight-bold">
+                  {{ APP_CONSTANTS.introductionOBJ.mail.title }}
+                </div>
+                <div>{{ APP_CONSTANTS.introductionOBJ.mail.value }}</div>
+              </div>
+            </q-card-section>
+          </q-card>
+        </div>
+        <div class="col-12 col-md-4">
+          <q-card bordered>
+            <q-card-section class="row">
+              <div class="col-1 flex flex-center">
+                <q-icon
+                  color="secondary"
+                  name="mdi-card-account-phone"
+                  size="xl"
+                ></q-icon>
+              </div>
+              <div class="column q-pl-md">
+                <div class="text-h6 text-weight-bold">
+                  {{ APP_CONSTANTS.introductionOBJ.phone.title }}
+                </div>
+                <div>{{ APP_CONSTANTS.introductionOBJ.phone.value }}</div>
+              </div>
+            </q-card-section>
+          </q-card>
+        </div>
+      </div>
+
+      <q-card v-if="false" bordered class="q-mt-md q-py-md">
+        <q-card-section>
+          <div class="row">
+            <div class="col q-pl-md q-pr-sm">
+              <q-input color="secondary" outlined label="Your Name"></q-input>
+            </div>
+            <div class="col q-pr-md q-pl-sm">
+              <q-input color="secondary" outlined label="Your Email"></q-input>
+            </div>
+          </div>
+        </q-card-section>
+        <q-card-section>
+          <div class="row">
+            <div class="col q-pl-md q-pr-sm">
+              <q-input color="secondary" outlined label="Subject"></q-input>
+            </div>
+            <div class="col q-pr-md q-pl-sm">
+              <q-input
+                color="secondary"
+                outlined
+                label="Contact Number"
+              ></q-input>
+            </div>
+          </div>
+        </q-card-section>
+        <q-card-section>
+          <div class="q-px-md">
+            <q-input
+              color="secondary"
+              outlined
+              label="Message"
+              type="textarea"
+            ></q-input>
+          </div>
+        </q-card-section>
+        <q-card-actions align="center">
+          <q-btn
+            label="Send Message"
+            color="secondary"
+            no-caps
+            size="lg"
+          ></q-btn>
+        </q-card-actions>
+      </q-card>
     </div>
   </q-page>
 </template>

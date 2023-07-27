@@ -4,7 +4,7 @@
       :href="APP_CONSTANTS.socialMediaLinks.github"
       target="_blank"
       round
-      size="lg"
+      :size="$q.screen.lt.sm ? '1rem' : 'lg'"
       class="bg-grey-9 q-mr-sm"
       icon="mdi-github"
     ></q-btn>
@@ -12,7 +12,7 @@
       :href="APP_CONSTANTS.socialMediaLinks.linkedin"
       target="_blank"
       round
-      size="lg"
+      :size="$q.screen.lt.sm ? '1rem' : 'lg'"
       class="bg-blue q-mr-sm"
       icon="mdi-linkedin"
     ></q-btn>
@@ -20,7 +20,7 @@
       href="mailto: abc@example.com"
       target="_blank"
       round
-      size="lg"
+      :size="$q.screen.lt.sm ? '1rem' : 'lg'"
       class="bg-red q-mr-sm"
       icon="mdi-gmail"
     ></q-btn>
@@ -28,7 +28,7 @@
       :href="APP_CONSTANTS.socialMediaLinks.facebook"
       target="_blank"
       round
-      size="lg"
+      :size="$q.screen.lt.sm ? '1rem' : 'lg'"
       class="bg-blue q-mr-sm"
       icon="mdi-facebook"
     ></q-btn>
@@ -36,21 +36,24 @@
       :href="APP_CONSTANTS.socialMediaLinks.twitter"
       target="_blank"
       round
-      size="lg"
+      :size="$q.screen.lt.sm ? '1rem' : 'lg'"
       class="bg-blue q-mr-sm"
       icon="mdi-twitter"
     ></q-btn>
   </div>
-  <div v-if="props.showContacts" class="row q-mt-xl text-white">
+  <div
+    v-if="props.showContacts"
+    class="row q-ml-lg q-gutter-y-xs q-mt-lg text-white"
+  >
     <q-btn
       @click="scroll('contact')"
-      size="lg"
-      class="bg-purple-9 q-ma-sm"
+      :size="$q.screen.lt.sm ? '1rem' : 'lg'"
+      class="bg-purple-9 q-mr-sm"
       label="Contact me"
     ></q-btn>
     <q-btn
-      size="lg"
-      class="bg-purple-9 q-ma-sm"
+      :size="$q.screen.lt.sm ? '1rem' : 'lg'"
+      class="bg-purple-9 q-mr-sm"
       href="https://drive.google.com/file/d/1BjszPP1kew7hgWuInH-rv67okoqjCi1q/view?usp=sharing"
       target="_blank"
       label="See My Resume"
