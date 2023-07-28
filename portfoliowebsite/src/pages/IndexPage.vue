@@ -197,16 +197,18 @@
               <q-card-section
                 :class="experience.expCardBg"
                 class="text-center text-white relative-position"
-                style="min-height: 180px"
+                :style="{
+                  minHeight: $q.screen.gt.md ? '180px' : '210px',
+                }"
               >
-                <div class="q-ma-lg text-h4">{{ experience.entityName }}</div>
-                <q-avatar
-                  class="absolute-bottom q-pt-md"
-                  size="4.8rem"
-                  style="left: 40%"
-                >
-                  <img :src="experience.entityLogo.logo" />
-                </q-avatar>
+                <div class="q-ma-lg text-h4">
+                  {{ experience.entityName }}
+                </div>
+                <div class="absolute-bottom">
+                  <q-avatar class="q-pt-lg" size="4.8rem">
+                    <img :src="experience.entityLogo.logo" />
+                  </q-avatar>
+                </div>
               </q-card-section>
               <q-card-section class="column text-center">
                 <div class="text-weight-medium q-my-xs custom-text">
